@@ -28,7 +28,7 @@
 		<hr>
 
 		<!-- Directivas de iteración (v-for) -->
-		<h2>Listado de Películas</h2>
+		<h2>Listado de Películas (array)</h2>
 		<ol>
 			<li v-for="pelicula in peliculas">{{ pelicula }}</li>
 		</ol>
@@ -36,9 +36,15 @@
 		<hr>
 
 		<!-- Directivas de iteración sobre objetos (v-for) -->
-		<h2>Listado de Frutas</h2>
+		<h2>Listado de Frutas (array de objetos)</h2>
 		<ul>
 			<li v-for="(fruta, index) in frutas">{{ index }}: {{ fruta.nombre }} - {{ fruta.temporada }}</li>
+		</ul>
+
+		<!-- Directivas de iteración sobre objetos (v-for) -->
+		<h2>Listado de elementos Superfruta (objeto)</h2>
+		<ul>
+			<li v-for="(value, key, index) in superfruta">{{ index }}: {{ key }} --> {{ value }}</li>
 		</ul>
 	</main>
 

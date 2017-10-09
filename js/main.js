@@ -10,6 +10,7 @@ new Vue({
 			{nombre: 'Naranja', temporada: 'Otoño', precio: 'Medio'},
 			{nombre: 'Cereza', temporada: 'Primavera', precio: 'Alto'},
 			{nombre: 'Sandía', temporada: 'Verano', precio: 'Medio'}
-		]
+		],
+		superfruta: {nombre: 'Mandarina', temporada: 'Verano', precio: 'Medio'}
 	}
 });
