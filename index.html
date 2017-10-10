@@ -7,6 +7,29 @@
 <body>
 
 	<main>
+		<!-- Eventos click y submit -->
+		<h2>Películas</h2>
+		<ol>
+			<li v-for="(pelicula, index) in peliculas">
+				{{ pelicula }}
+				<button @click="borrarPelicula(index)">Borrar Película</button>
+			</li>
+		</ol>
+
+		<form @submit.prevent="crearPelicula()">
+			<input type="text" name="nuevaPelicula" v-model="peliculaNueva">
+			<input type="submit" name="buttonPelicula" value="Nueva Película">
+		</form>
+		
+		<br><br>
+
+		<!--
+			<button v-on:click="crearPelicula()">Crear Película</button>
+			<button @click="borrarPelicula()">Borrar Película</button>
+		-->
+
+		<hr>
+
 		<!-- Interpolación / imprimir una variable del modelo -->
 		<h1>{{ texto }}</h1>
 		<h2 v-text="texto"></h2>
@@ -41,11 +64,16 @@
 			<li v-for="(fruta, index) in frutas">{{ index }}: {{ fruta.nombre }} - {{ fruta.temporada }}</li>
 		</ul>
 
+		<hr>
+
 		<!-- Directivas de iteración sobre objetos (v-for) -->
 		<h2>Listado de elementos Superfruta (objeto)</h2>
 		<ul>
 			<li v-for="(value, key, index) in superfruta">{{ index }}: {{ key }} --> {{ value }}</li>
 		</ul>
+
+		<hr>
+
 	</main>
 
 	<script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
