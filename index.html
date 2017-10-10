@@ -28,11 +28,27 @@
 	<hr>
 
 	<main>
+
+		<!-- Paso de variables globales a un componente -->
+		<hr>
+		<frutas :objeto="superfruta"></frutas>
+		<frutass :objeto="superfruta" inline-template>
+			<div>
+				<h2>Componente de Frutas 2 </h2>
+				<br>
+				<h3>Nombre de la fruta: {{objeto.nombre}}</h3>
+				<br>
+				<h3>Temporada de la fruta: {{objeto.temporada}}</h3>
+			</div>	
+		</frutass>
+
+		<hr>
+
 		<!-- Ejemplo para el uso de un componente -->
 		<hr>
 		<peliculas></peliculas>
 		<hr>
-		<frutas></frutas>
+		<!--<frutas></frutas>-->
 		<hr>
 		<users></users>
 

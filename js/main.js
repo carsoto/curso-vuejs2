@@ -34,7 +34,16 @@ Vue.component('peliculas', {
 });
 
 Vue.component('frutas', {
-	template: `<h2>Componente de Frutas</h2>`
+	props: ['objeto'],
+	template: `
+		<div>
+			<h2>Componente de Frutas 1 </h2>
+			<h3>Nombre de la fruta: {{objeto.nombre}}</h3>
+		</div>`
+});
+
+Vue.component('frutass', {
+	props: ['objeto']
 });
 
 Vue.filter('mayusculas', (value) => value.toUpperCase());
