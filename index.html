@@ -7,6 +7,17 @@
 <body>
 
 	<main>
+		<!-- Propiedades computadas -->
+		<h2>{{ nombreYapellido }}</h2>
+
+		<h2>Películas Ordenadas</h2>
+		<ol>
+			<li v-for="pelicula in peliculasOrdenadas">
+				{{ pelicula }}
+			</li>
+		</ol>
+		<hr>
+
 		<!-- Eventos click y submit -->
 		<h2>Películas</h2>
 		<ol>

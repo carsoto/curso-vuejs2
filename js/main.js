@@ -2,9 +2,10 @@ new Vue({
 	el: "main",
 	data: {
 		texto: "Hola Mundo desde VueJS 2",
-		nombre: "Nombre por defecto",
+		nombre: "Carmen María",
+		apellido: "Soto",
 		nota: 5,
-		peliculas: ['Batman vs Superman', 'La verdad duele', 'Los mercenarios', 'Spiderman 3', 'Titanic'],
+		peliculas: ['Batman vs Superman', 'A', 'La verdad duele', 'B', 'Los mercenarios', 'Spiderman 3', 'C', 'Titanic', 'D'],
 		frutas: [
 			{nombre: 'Manzana', temporada: 'Invierno', precio: 'Bajo'},
 			{nombre: 'Naranja', temporada: 'Otoño', precio: 'Medio'},
@@ -23,6 +24,17 @@ new Vue({
 		borrarPelicula(index){
 			//alert(index);
 			this.peliculas.splice(index, 1);
+		}
+	},
+	computed: {
+		nombreYapellido(){
+			var d = new Date();
+			var year = d.getFullYear();
+
+			return this.nombre + " " + this.apellido + " - Nota: " + this.nota + " - Año: " + year;
+		},
+		peliculasOrdenadas(){
+			return this.peliculas.sort();
 		}
 	}
 });
