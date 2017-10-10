@@ -87,7 +87,8 @@ new Vue({
 		],
 		superfruta: {nombre: 'Mandarina', temporada: 'Verano', precio: 'Medio'},
 		peliculaNueva: null,
-		marcado: null
+		marcado: null,
+		elegido: 'users'
 	},
 	
 	methods:{

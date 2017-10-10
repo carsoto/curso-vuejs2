@@ -28,9 +28,17 @@
 	<hr>
 
 	<main>
+		<!-- Componentes dinámicos -->
+		<button @click="elegido = 'users'">Componente Users</button>
+		<button @click="elegido = 'padre'">Componente Padre</button>
+		<component :is="elegido"></component>
+
+		<hr>
+
 		<!-- Componente padre con componente hijo -->
 		<hr>
 		<padre></padre>
+
 		<hr>
 
 		<!-- Paso de variables globales a un componente -->
