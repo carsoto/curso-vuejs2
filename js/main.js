@@ -46,6 +46,20 @@ Vue.component('frutass', {
 	props: ['objeto']
 });
 
+Vue.component('padre', {
+	template: `
+		<div>
+			<h2>Componente Padre </h2>
+			<div>
+				<hijo></hijo>
+			</div>
+		</div>`
+});
+
+Vue.component('hijo', {
+	template: `<p style="background-color: blue; color: white;">Soy un componente hijo</p>`
+});
+
 Vue.filter('mayusculas', (value) => value.toUpperCase());
 
 new Vue({
