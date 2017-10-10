@@ -1,11 +1,51 @@
+Vue.component('users', {
+	template: 
+			`<div class="componente">
+				<h2>Componente de {{ titulo }}</h2>
+				<h2>Ejemplo de listado con ajax dentro de un componente</h2>
+		
+				<ol v-if="users">
+					<li v-for="(user, index) in users">
+						{{ user.name + " (" + user.username + ")" }}
+					</li>
+				</ol>
+				<span v-else>Cargando listado por ajax...</span>
+			</div>`,
+	mounted(){
+		axios.get('https://jsonplaceholder.typicode.com/users').then((respuesta) => {
+			this.users = respuesta.data;
+		});
+	},
+	data(){
+		return {
+			titulo: "Usuarios vía ajax",
+			users: null
+		}
+	}
+});
+
+Vue.component('peliculas', {
+	template: `<h2>Componente de {{ titulo }}</h2>`,
+	data(){
+		return {
+			titulo: "Peliculas"
+		}
+	}
+});
+
+Vue.component('frutas', {
+	template: `<h2>Componente de Frutas</h2>`
+});
+
 Vue.filter('mayusculas', (value) => value.toUpperCase());
+
 new Vue({
 	el: "main",
 	
 	mounted(){
 		axios.get('https://jsonplaceholder.typicode.com/users').then((respuesta) => {
 			this.users = respuesta.data;
-		});8
+		});
 	},
 
 	data: {
