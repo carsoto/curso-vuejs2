@@ -15,7 +15,8 @@ new Vue({
 			{nombre: 'Sandía', temporada: 'Verano', precio: 'Medio'}
 		],
 		superfruta: {nombre: 'Mandarina', temporada: 'Verano', precio: 'Medio'},
-		peliculaNueva: null
+		peliculaNueva: null,
+		marcado: null
 	},
 	methods:{
 		crearPelicula(){
@@ -23,9 +24,14 @@ new Vue({
 			this.peliculas.unshift(this.peliculaNueva);
 			this.peliculaNueva = null;
 		},
+
 		borrarPelicula(index){
 			//alert(index);
 			this.peliculas.splice(index, 1);
+		},
+
+		marcar(index){
+			this.marcado = index;
 		}
 	},
 	computed: {
@@ -35,9 +41,11 @@ new Vue({
 
 			return this.nombre + " " + this.apellido + " - Nota: " + this.nota + " - Año: " + year;
 		},
+
 		peliculasOrdenadas(){
 			return this.peliculas.sort();
 		},
+
 		buscarFruta(){
 			/*return this.peliculas.filter(function (pelicula) {
 				pelicula.includes(this.busqueda);
