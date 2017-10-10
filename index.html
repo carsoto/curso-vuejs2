@@ -6,8 +6,20 @@
 </head>
 <body>
 
-	<main>
+	<!-- Multiples Instancias de elementos vue -->
+	<div id="app">
+		<h2>{{ texto }}</h2>
+		<h3>{{ texto | mayusculas }}</h3>
+	</div>
 
+	<div id="app2">
+		<h2>{{ texto }}</h2>
+		<h3>{{ texto | mayusculas }}</h3>
+	</div>
+
+	<hr>
+
+	<main>
 		<!-- Filtros -->
 		<h2>Ejemplo de filtros</h2>
 		<input type="search" name="search_frutas" v-model="busqueda" placeholder="Buscar">

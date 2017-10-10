@@ -46,3 +46,17 @@ new Vue({
 		}
 	}
 });
+
+const vue2 = new Vue({
+	el: "#app",
+	data: {
+		texto: "Segunda instancia de VueJS2"
+	}
+});
+
+const vue3 = new Vue({
+	el: "#app2",
+	data: {
+		texto: "Tercera instancia de VueJS2"
+	}
+});
