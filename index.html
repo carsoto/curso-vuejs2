@@ -7,6 +7,18 @@
 <body>
 
 	<main>
+
+		<!-- Filtros -->
+		<h2>Ejemplo de filtros</h2>
+		<input type="search" name="search_frutas" v-model="busqueda" placeholder="Buscar">
+		<ol>
+			<li v-for="(fruta, index) in buscarFruta">
+				{{ fruta.nombre | mayusculas}}
+			</li>
+		</ol>
+
+		<hr>
+
 		<!-- Propiedades computadas -->
 		<h2>{{ nombreYapellido }}</h2>
 

@@ -1,9 +1,11 @@
+Vue.filter('mayusculas', (value) => value.toUpperCase());
 new Vue({
 	el: "main",
 	data: {
 		texto: "Hola Mundo desde VueJS 2",
 		nombre: "Carmen María",
 		apellido: "Soto",
+		busqueda: "",
 		nota: 5,
 		peliculas: ['Batman vs Superman', 'A', 'La verdad duele', 'B', 'Los mercenarios', 'Spiderman 3', 'C', 'Titanic', 'D'],
 		frutas: [
@@ -35,6 +37,12 @@ new Vue({
 		},
 		peliculasOrdenadas(){
 			return this.peliculas.sort();
+		},
+		buscarFruta(){
+			/*return this.peliculas.filter(function (pelicula) {
+				pelicula.includes(this.busqueda);
+			});*/
+			return this.frutas.filter((fruta) => fruta.nombre.includes(this.busqueda));
 		}
 	}
 });
