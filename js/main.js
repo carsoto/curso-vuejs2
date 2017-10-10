@@ -1,10 +1,18 @@
 Vue.filter('mayusculas', (value) => value.toUpperCase());
 new Vue({
 	el: "main",
+	
+	mounted(){
+		axios.get('https://jsonplaceholder.typicode.com/users').then((respuesta) => {
+			this.users = respuesta.data;
+		});8
+	},
+
 	data: {
 		texto: "Hola Mundo desde VueJS 2",
 		nombre: "Carmen María",
 		apellido: "Soto",
+		users: null,
 		busqueda: "",
 		nota: 5,
 		peliculas: ['Batman vs Superman', 'A', 'La verdad duele', 'B', 'Los mercenarios', 'Spiderman 3', 'C', 'Titanic', 'D'],
@@ -18,6 +26,7 @@ new Vue({
 		peliculaNueva: null,
 		marcado: null
 	},
+	
 	methods:{
 		crearPelicula(){
 			//alert(this.peliculaNueva);
@@ -34,6 +43,7 @@ new Vue({
 			this.marcado = index;
 		}
 	},
+	
 	computed: {
 		nombreYapellido(){
 			var d = new Date();
